@@ -17,10 +17,16 @@ const useData = <T>(endpoint: string) => {
     apiClient
       .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
       .then((res) => {
+        console.log(
+          "Inside useData Sucess: res.data.results",
+          res.data.results
+        );
         setData(res.data.results);
         setIsLoading(false);
       })
       .catch((err) => {
+        console.log("Inside useData Error: err.message", err.message);
+
         if (err instanceof CanceledError) return;
         {
           setError(err.message);
