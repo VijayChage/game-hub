@@ -29,14 +29,14 @@ const GenreList = () => {
                 src={getCroppedImageUrl(genre.image_background)}
               ></Image>
               <Button
-                whiteSpace="normal"
-                textAlign="left"
+                // whiteSpace="normal"
+                // textAlign="left"
                 // fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
                 // onClick={() => onSelectGenre(genre)}
-                fontSize="md"
+                fontSize="lg"
                 variant="link"
+                onClick={() => console.log(genre)}
               >
-                {" "}
                 {genre.name}
               </Button>
             </HStack>

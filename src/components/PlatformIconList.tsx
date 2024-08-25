@@ -32,7 +32,7 @@ function PlatformIconList({ platforms }: Props) {
   return (
     <HStack>
       {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]}></Icon>
+        <Icon as={iconMap[platform.slug]} key={platform.id}></Icon>
       ))}
     </HStack>
   );
